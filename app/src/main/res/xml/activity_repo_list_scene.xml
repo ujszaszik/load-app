@@ -31,7 +31,7 @@
             android:id="@+id/repoListImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="@dimen/default_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -48,10 +48,10 @@
             android:id="@+id/backToMainPageButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="@dimen/bias_half"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/backToMainPageButtonGuideline"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="@dimen/bias_full" />
 
     </ConstraintSet>
 
@@ -59,41 +59,40 @@
         app:autoTransition="animateToEnd"
         app:constraintSetEnd="@id/onActivityLoaded"
         app:constraintSetStart="@+id/onActivityStarted"
-        app:duration="1250">
+        app:duration="@integer/transition_default_duration">
 
         <KeyFrameSet>
             <KeyAttribute
-                android:alpha="0.0"
-                android:rotationX="-180"
-                app:framePosition="0"
+                android:alpha="@dimen/transparent"
+                android:rotationX="@integer/negative_straight_angle"
+                app:framePosition="@integer/start_position"
                 app:motionTarget="@id/repoListImageView" />
             <KeyAttribute
-                android:alpha="1.0"
-                android:rotationX="0"
-                app:framePosition="100"
+                android:alpha="@dimen/opaque"
+                android:rotationX="@integer/start_angle"
+                app:framePosition="@integer/end_position"
                 app:motionTarget="@id/repoListImageView" />
 
             <KeyAttribute
-                android:alpha="0.0"
-                android:scaleX="0"
-                android:scaleY="0"
-                app:framePosition="0"
+                android:alpha="@dimen/transparent"
+                android:scaleX="@integer/scale_not_visible"
+                android:scaleY="@integer/scale_not_visible"
+                app:framePosition="@integer/start_position"
                 app:motionTarget="@id/repoListRecyclerView" />
             <KeyAttribute
-                android:alpha="1.0"
-                android:scaleX="1"
-                android:scaleY="1"
-                app:framePosition="100"
+                android:alpha="@dimen/opaque"
+                android:scaleX="@integer/scale_unit"
+                android:scaleY="@integer/scale_unit"
+                app:framePosition="@integer/end_position"
                 app:motionTarget="@id/repoListRecyclerView" />
 
             <KeyAttribute
-                android:alpha="0.0"
-                app:framePosition="0"
+                android:alpha="@dimen/transparent"
+                app:framePosition="@integer/start_position"
                 app:motionTarget="@id/backToMainPageButton" />
             <KeyAttribute
-                android:alpha="1.0"
-                android:elevation="50dp"
-                app:framePosition="100"
+                android:alpha="@dimen/opaque"
+                app:framePosition="@integer/end_position"
                 app:motionTarget="@id/backToMainPageButton" />
 
         </KeyFrameSet>
