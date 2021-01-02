@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="file"
+            type="com.udacity.loadapp.network.FileModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/nameLabelTextView"
+            style="@style/DetailLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/detailFileName"
+            app:layout_constraintBaseline_toBaselineOf="@+id/nameValueTextView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/nameValueTextView"
+            style="@style/DetailValueTextView"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@{file.name}"
+            app:layout_constraintBottom_toTopOf="@id/sizeValueTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sizeLabelTextView"
+            style="@style/DetailLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detailFileSize"
+            app:layout_constraintBaseline_toBaselineOf="@+id/sizeValueTextView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/sizeValueTextView"
+            style="@style/DetailValueTextView"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            app:fileSize="@{file.size}"
+            app:layout_constraintBottom_toTopOf="@id/statusValueTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/nameValueTextView" />
+
+        <TextView
+            android:id="@+id/statusLabelTextView"
+            style="@style/DetailLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detailStatus"
+            app:layout_constraintBaseline_toBaselineOf="@+id/statusValueTextView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/statusValueTextView"
+            style="@style/DetailValueTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:downloadStatus="@{file.status}"
+            app:layout_constraintBottom_toTopOf="@id/modifiedValueTextView"
+            app:layout_constraintEnd_toStartOf="@id/statusCircle"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/sizeValueTextView" />
+
+        <ImageView
+            android:id="@+id/statusCircle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/modifiedValueTextView"
+            app:layout_constraintStart_toEndOf="@id/statusValueTextView"
+            app:layout_constraintTop_toBottomOf="@id/sizeValueTextView"
+            app:statusIcon="@{file.status}" />
+
+        <TextView
+            android:id="@+id/modifiedLabelTextView"
+            style="@style/DetailLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/detailLastModified"
+            app:layout_constraintBaseline_toBaselineOf="@+id/modifiedValueTextView"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/modifiedValueTextView"
+            style="@style/DetailValueTextView"
+            android:layout_width="@dimen/match_constraint"
+            android:layout_height="wrap_content"
+            app:lastModified="@{file.lastModified}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline"
+            app:layout_constraintTop_toBottomOf="@id/statusValueTextView" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="@dimen/detail_view_split_guideline_pct" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

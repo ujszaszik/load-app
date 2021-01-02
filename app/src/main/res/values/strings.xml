@@ -1,0 +1,60 @@
+<resources>
+
+    <!-- ACTION BAR NAMES -->
+    <string name="app_name">Load App</string>
+    <string name="detail_view_name">Details</string>
+    <string name="repo_list_name">Repo List</string>
+
+    <!--  TOAST MESSAGES-->
+    <string name="toast_no_connection">There is no connection</string>
+    <string name="toast_file_not_exists">This file does not exist</string>
+    <string name="toast_file_already_downloaded">This file has already been downloaded</string>
+    <string name="toast_no_file_selected">Please select an option!</string>
+
+    <!-- INTENT KEY-->
+    <string name="file_model_intent_id">fileId</string>
+
+    <!-- DOWNLOAD NAMES & URLS-->
+    <string name="download_glide_label">Glide - Image Loading Library by BumpTech</string>
+    <string name="download_glide_url">https://github.com/bumptech/glide</string>
+    <string name="download_udacity_load_app_label">Load App - Current Repository by Udacity</string>
+    <string name="download_udacity_load_app_url">https://github.com/udacity/nd940-c3-advanced-android-programming-project-starter</string>
+    <string name="download_retrofit_label">Retrofit - Type-Safe HTTP Client for Android and Java by Square, Inc.</string>
+    <string name="download_retrofit_url">https://github.com/square/retrofit</string>
+    <string name="download_custom_url_label">Click for custom URL</string>
+
+    <!-- DOWNLOAD MESSAGES-->
+    <string name="message_successful">Success</string>
+    <string name="message_error">Error</string>
+
+    <!-- BUTTON LABELS-->
+    <string name="label_button_download">DOWNLOAD</string>
+    <string name="label_button_loading">LOADING</string>
+    <string name="label_button_ok">OK</string>
+    <string name="label_button_cancel">CANCEL</string>
+    <string name="label_button_list_all_repos">List all repos</string>
+    <string name="label_button_back_to_main_page">Back to Main Page</string>
+
+    <!-- DOWNLOAD DETAILS -->
+    <string name="detailFileName">File Name</string>
+    <string name="detailFileSize">File Size</string>
+    <string name="detailStatus">Status</string>
+    <string name="detailLastModified">Last Modified</string>
+
+    <!-- DIALOG -->
+    <string name="dialog_title">Select Custom Repository</string>
+    <string name="dialog_repository_name">Repository Name</string>
+    <string name="dialog_repository_url">Repository URL</string>
+    <string name="dialog_repository_url_prefix">https://github.com/</string>
+    <string name="dialog_all_fields_are_mandatory">All fields are mandatory!</string>
+
+    <!-- NOTIFICATION -->
+    <string name="notification_id">1</string>
+    <string name="notification_content_title">Download finished!</string>
+    <string name="notification_success_message">%1$s has been downloaded successfully!</string>
+    <string name="notification_error_message">Downloading %1$s has failed!</string>
+    <string name="notification_action_label">Show the Details</string>
+    <string name="notification_channel_id">Load App Channel</string>
+    <string name="notification_channel_name">Load App Notification Channel</string>
+    <string name="notification_channel_description">Default Notification Channel for Load App</string>
+</resources>

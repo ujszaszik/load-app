@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="file"
+            type="com.udacity.loadapp.network.FileModel" />
+
+        <variable
+            name="listener"
+            type="com.udacity.loadapp.repolist.ItemClickListener" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/small_margin"
+        app:cardElevation="@dimen/default_elevation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> listener.performClick(file)}">
+
+            <ImageView
+                android:id="@+id/fileStatusImageView"
+                style="FileStatusImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/file_status_image_height"
+                app:layout_constraintEnd_toStartOf="@+id/fileNameTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:statusIcon="@{file.status}" />
+
+            <TextView
+                android:id="@+id/fileNameTextView"
+                style="RepoListRowNameText"
+                android:layout_width="@dimen/match_constraint"
+                android:layout_height="wrap_content"
+                android:text="@{file.name}"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/fileStatusImageView"
+                app:layout_constraintStart_toEndOf="@id/fileStatusImageView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fileSizeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/tiny_margin"
+                app:fileSize="@{file.size}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fileNameTextView" />
+
+            <TextView
+                android:id="@+id/fileLastModifiedTextVIew"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/tiny_margin"
+                app:lastModified="@{file.lastModified}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fileSizeTextView" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- ALPHA -->
+    <dimen name="transparent">0.0</dimen>
+    <dimen name="opaque">100.0</dimen>
+
+    <!-- FRAME POSITION -->
+    <integer name="start_position">0</integer>
+    <integer name="end_position">100</integer>
+
+    <!-- ROTATION ANGLE -->
+    <integer name="negative_straight_angle">-180</integer>
+    <integer name="start_angle">0</integer>
+
+    <!-- SCALE -->
+    <integer name="scale_not_visible">0</integer>
+    <integer name="scale_unit">1</integer>
+
+    <!-- DURATION -->
+    <integer name="transition_default_duration">1500</integer>
+</resources>

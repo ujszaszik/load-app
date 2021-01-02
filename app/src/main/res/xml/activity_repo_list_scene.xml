@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/onActivityStarted">
+
+        <Constraint
+            android:id="@+id/repoListImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/repo_details_logo" />
+
+        <Constraint
+            android:id="@+id/repoListRecyclerView"
+            app:layout_constraintBottom_toTopOf="@+id/backToMainPageButtonGuideline"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent" />
+
+        <Constraint
+            android:id="@+id/backToMainPageButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/onActivityLoaded">
+
+        <Constraint
+            android:id="@+id/repoListImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/repo_details_logo" />
+
+        <Constraint
+            android:id="@+id/repoListRecyclerView"
+            app:layout_constraintBottom_toTopOf="@id/backToMainPageButtonGuideline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repoListImageView" />
+
+        <Constraint
+            android:id="@+id/backToMainPageButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/backToMainPageButtonGuideline"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </ConstraintSet>
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/onActivityLoaded"
+        app:constraintSetStart="@+id/onActivityStarted"
+        app:duration="1250">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0.0"
+                android:rotationX="-180"
+                app:framePosition="0"
+                app:motionTarget="@id/repoListImageView" />
+            <KeyAttribute
+                android:alpha="1.0"
+                android:rotationX="0"
+                app:framePosition="100"
+                app:motionTarget="@id/repoListImageView" />
+
+            <KeyAttribute
+                android:alpha="0.0"
+                android:scaleX="0"
+                android:scaleY="0"
+                app:framePosition="0"
+                app:motionTarget="@id/repoListRecyclerView" />
+            <KeyAttribute
+                android:alpha="1.0"
+                android:scaleX="1"
+                android:scaleY="1"
+                app:framePosition="100"
+                app:motionTarget="@id/repoListRecyclerView" />
+
+            <KeyAttribute
+                android:alpha="0.0"
+                app:framePosition="0"
+                app:motionTarget="@id/backToMainPageButton" />
+            <KeyAttribute
+                android:alpha="1.0"
+                android:elevation="50dp"
+                app:framePosition="100"
+                app:motionTarget="@id/backToMainPageButton" />
+
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>

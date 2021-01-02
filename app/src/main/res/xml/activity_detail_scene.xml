@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/onDetailActivityStarted">
+
+        <Constraint
+            android:id="@+id/repoDetailsLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/repo_details_logo" />
+
+        <Constraint
+            android:id="@+id/okButton"
+            app:layout_constraintBottom_toTopOf="@+id/listButton"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repoDetailView"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Constraint
+            android:id="@+id/listButton"
+            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repoDetailView" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/onDetailActivityLoaded">
+
+        <Constraint
+            android:id="@+id/repoDetailsLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/repo_details_logo" />
+
+
+        <Constraint
+            android:id="@+id/okButton"
+            app:layout_constraintBottom_toTopOf="@+id/listButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="@dimen/bias_half"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailActivityButtonGuideline"
+            app:layout_constraintVertical_bias="@dimen/bias_full"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Constraint
+            android:id="@+id/listButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="@dimen/bias_half"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/okButton"
+            app:layout_constraintVertical_bias="@dimen/bias_full" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/onDetailActivityFinished">
+
+        <Constraint
+            android:id="@+id/repoDetailsLogo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/repo_details_logo" />
+
+        <Constraint
+            android:id="@+id/okButton"
+            app:layout_constraintBottom_toTopOf="@+id/listButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailActivityButtonGuideline"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <Constraint
+            android:id="@+id/listButton"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/okButton" />
+
+    </ConstraintSet>
+
+    <Transition
+        app:autoTransition="animateToEnd"
+        app:constraintSetEnd="@id/onDetailActivityLoaded"
+        app:constraintSetStart="@+id/onDetailActivityStarted"
+        app:duration="@integer/transition_default_duration">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="@dimen/transparent"
+                android:rotationX="@integer/negative_straight_angle"
+                app:framePosition="@integer/start_position"
+                app:motionTarget="@id/repoDetailsLogo" />
+            <KeyAttribute
+                android:alpha="@dimen/opaque"
+                android:rotationX="@integer/start_angle"
+                app:framePosition="@integer/end_position"
+                app:motionTarget="@id/repoDetailsLogo" />
+
+            <KeyAttribute
+                android:alpha="@dimen/transparent"
+                app:framePosition="@integer/start_position"
+                app:motionTarget="@id/okButton" />
+            <KeyAttribute
+                android:alpha="@dimen/opaque"
+                app:framePosition="@integer/end_position"
+                app:motionTarget="@id/okButton" />
+            <KeyAttribute
+                android:alpha="@dimen/transparent"
+                app:framePosition="@integer/start_position"
+                app:motionTarget="@id/listButton" />
+            <KeyAttribute
+                android:alpha="@dimen/opaque"
+                app:framePosition="@integer/end_position"
+                app:motionTarget="@id/listButton" />
+
+        </KeyFrameSet>
+    </Transition>
+
+    <Transition
+        android:id="@+id/transitionOut"
+        app:constraintSetEnd="@id/onDetailActivityFinished"
+        app:constraintSetStart="@+id/onDetailActivityLoaded"
+        app:duration="@integer/transition_default_duration">
+
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="@dimen/transparent"
+                android:rotationX="@integer/negative_straight_angle"
+                app:framePosition="@integer/start_position"
+                app:motionTarget="@id/repoDetailsLogo" />
+            <KeyAttribute
+                android:alpha="@dimen/opaque"
+                android:rotationX="@integer/start_angle"
+                app:framePosition="@integer/end_position"
+                app:motionTarget="@id/repoDetailsLogo" />
+
+            <KeyAttribute
+                android:alpha="@dimen/transparent"
+                app:framePosition="@integer/start_position"
+                app:motionTarget="@id/okButton" />
+            <KeyAttribute
+                android:alpha="@dimen/opaque"
+                app:framePosition="@integer/end_position"
+                app:motionTarget="@id/okButton" />
+            <KeyAttribute
+                android:alpha="@dimen/transparent"
+                app:framePosition="@integer/start_position"
+                app:motionTarget="@id/listButton" />
+            <KeyAttribute
+                android:alpha="@dimen/opaque"
+                app:framePosition="@integer/end_position"
+                app:motionTarget="@id/listButton" />
+        </KeyFrameSet>
+    </Transition>
+</MotionScene>

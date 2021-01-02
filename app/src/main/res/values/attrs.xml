@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FancyButton">
+        <!-- TEXT -->
+        <attr name="initialText" format="string" />
+        <attr name="loadingText" format="string" />
+        <!-- COLOR -->
+        <attr name="initialTextColor" format="color" />
+        <attr name="loadingTextColor" format="color" />
+        <attr name="bgRectColor" format="color" />
+        <attr name="loadingColor" format="color" />
+        <attr name="successColor" format="color" />
+        <attr name="errorColor" format="color" />
+        <!-- FLOAT -->
+        <attr name="sweepAngle" format="float" />
+        <attr name="rectCornerRadius" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="RepoSelectorRadioButton">
+        <attr name="name" format="string" />
+        <attr name="url" format="string" />
+        <attr name="isCustomFormat" format="boolean" />
+    </declare-styleable>
+
+</resources>

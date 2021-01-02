@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.udacity.loadapp.fetcher.FetcherViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:context=".fetcher.FetcherActivity">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="@dimen/logo_image_default_side_length"
+            android:layout_height="@dimen/logo_image_default_side_length"
+            app:layout_constraintBottom_toTopOf="@+id/repoSelector"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="spread"
+            app:srcCompat="@drawable/repo_fetcher_logo" />
+
+        <com.udacity.loadapp.fetcher.reposelector.RepoSelector
+            android:id="@+id/repoSelector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/fancyButton"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <com.udacity.loadapp.fetcher.fancybutton.FancyButton
+            android:id="@+id/fancyButton"
+            android:layout_width="@dimen/fancy_button_width"
+            android:layout_height="@dimen/fancy_button_height"
+            app:bgRectColor="@color/teal_200"
+            app:downloadState="@{viewModel.downloadState}"
+            app:errorColor="@color/red"
+            app:initialText="@string/label_button_download"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/repoSelector"
+            app:loadingColor="@color/teal_700"
+            app:loadingText="@string/label_button_loading"
+            app:rectCornerRadius="@integer/fancy_button_rectangle_corner_radius"
+            app:successColor="@color/green"
+            app:sweepAngle="@integer/fancy_button_starting_sweep_angle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
